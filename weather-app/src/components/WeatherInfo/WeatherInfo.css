@@ -1,0 +1,56 @@
+/* WeatherInfo.css */
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #3498db;
+  color: #fff;
+  height: 100vh;
+}
+
+.header {
+  border-top: 2px solid yellow;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.details-container {
+  display: flex;
+  height: 100%;
+}
+
+.left-column {
+  width: 10%;
+  box-sizing: border-box;
+}
+
+.middle-column {
+  width: 10%;
+  border-right: 2px solid white;
+  box-sizing: border-box;
+}
+
+.right-column {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.vertical-line {
+  border-left: 1px solid #fff;
+  height: 100%;
+  margin: 0 0px;
+}
+
+.row {
+  display: flex;
+  /* flex-direction: column; */
+  margin-bottom: 10px;
+  
+}
+
+.row p {
+  margin: 0;
+  margin-left: 50px;
+ 
+}
