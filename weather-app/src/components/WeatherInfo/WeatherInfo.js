@@ -38,30 +38,30 @@ const WeatherInfo = ({ data }) => {
           <div className="right-column">
             <div className="row">
               <div>
-                <p>High</p>
                 <p>{main.temp_max}°C</p>
+                <p className="caption">High</p>
               </div>
               <div>
-                <p>Wind</p>
                 <p>{wind.speed} mph</p>
+                <p className="caption">Wind</p>
               </div>
               <div>
-                <p>Sunrise</p>
                 <p>{formatTime(sunrise)}</p>
+                <p className="caption">Sunrise</p>
               </div>
             </div>
             <div className="row">
               <div>
-                <p>Low</p>
                 <p>{main.temp_min}°C</p>
+                <p className="caption">Low</p>
               </div>
               <div>
-                <p>Rain</p>
                 <p>{clouds.all}%</p>
+                <p className="caption">Rain</p>
               </div>
               <div>
-                <p>Sunset</p>
                 <p>{formatTime(sunset)}</p>
+                <p className="caption">Sunset</p>
               </div>
             </div>
           </div>

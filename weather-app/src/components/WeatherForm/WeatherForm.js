@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './WeatherForm.css';
+import ErrorModal from '../ErrorModal/ErrorModal';
 
 const WeatherForm = ({ onWeatherData }) => {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [error, setError] = useState('');
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   useEffect(() => {
     setError('');
@@ -15,6 +17,7 @@ const WeatherForm = ({ onWeatherData }) => {
 
     if (!latitude || !longitude || !isValidLatitude(latitude) || !isValidLongitude(longitude)) {
       setError('Invalid input. Please enter valid latitude and longitude.');
+      setShowErrorModal(true);
       return;
     }
 
@@ -32,6 +35,7 @@ const WeatherForm = ({ onWeatherData }) => {
       onWeatherData(data);
     } catch (error) {
       setError(`Error: ${error.message}`);
+      setShowErrorModal(true);
     }
   };
 
@@ -51,24 +55,36 @@ const WeatherForm = ({ onWeatherData }) => {
     return /^-?((1[0-7][0-9])|([1-9]?[0-9]))\.{1}\d{1,6}$/.test(lon);
   };
 
+  const handleCloseErrorModal = () => {
+    setShowErrorModal(false);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-      <input
-          type="text"
-          value={latitude}
-          onChange={handleLatitudeChange}
-        />
-       <input
-          type="text"
-          value={longitude}
-          onChange={handleLongitudeChange}
-        />
-       </div>
-       
-      <button type="submit" style={{ display: 'none' }}>Get Weather</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Lat & Long:
+          <input
+            type="text"
+            value={latitude}
+            onChange={handleLatitudeChange}
+          />
+          <input
+            type="text"
+            value={longitude}
+            onChange={handleLongitudeChange}
+          />
+        </label>
+
+        <button type="submit" style={{ display: 'none' }}>
+          Get Weather
+        </button>
+      </form>
+
+      {showErrorModal && (
+        <ErrorModal message={error} onClose={handleCloseErrorModal} />
+      )}
+    </div>
   );
 };
 

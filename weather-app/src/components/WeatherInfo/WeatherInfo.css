@@ -3,9 +3,10 @@
 .weather-container {
   display: flex;
   flex-direction: column;
-  background-color: #3498db;
+  background: linear-gradient(to bottom, #3498db, #0066cc); /* Gradient of blue */
   color: #fff;
   height: 100vh;
+  padding: 0 100px;
 }
 
 .header {
@@ -17,40 +18,45 @@
 .details-container {
   display: flex;
   height: 100%;
+  align-items: flex-start; /* Corrected value */
 }
 
-.left-column {
+.left-column,
+.middle-column,
+.right-column {
   width: 10%;
-  box-sizing: border-box;
-}
-
-.middle-column {
-  width: 10%;
-  border-right: 2px solid white;
-  box-sizing: border-box;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 50px;
 }
 
 .right-column {
+  margin-top: 20px;
+  margin-bottom: 20px;
   flex: 1;
-  padding: 10px;
-  box-sizing: border-box;
+  margin-left: 10px;
 }
 
 .vertical-line {
-  border-left: 1px solid #fff;
-  height: 100%;
-  margin: 0 0px;
+  border-left: 4px solid #fff;
+  height: 50%;
+  margin: 10px 0px; 
 }
 
 .row {
   display: flex;
-  /* flex-direction: column; */
-  margin-bottom: 10px;
-  
+  margin-bottom: 100px;
 }
 
 .row p {
   margin: 0;
-  margin-left: 50px;
- 
+  margin-left: 150px;
+  font-weight: bold;
+}
+
+.row .caption {
+  font-size: 14px; 
+  margin: 0;
+  margin-left: 150px;
+  font-weight: normal;
 }
