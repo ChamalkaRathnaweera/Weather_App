@@ -1,0 +1,47 @@
+/* ErrorModal.css */
+.error-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .warning-sign {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  button {
+    background: #57bee3;
+    border: none;
+    color: #fff;
+    padding: 5px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 30%;
+    height: 20%;
+    transform: translateX(-50%);
+  }
+
+  .modal-message {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
